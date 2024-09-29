@@ -2,6 +2,17 @@
 
   "use strict";
 
+  //--------VDNT change
+      $(document).ready(function() {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            $('body').addClass('dark-mode');
+            $('.color-mode-icon').addClass('active'); // Optional: Change the icon to active
+        } else {
+            $('body').removeClass('dark-mode');
+        }
+      });
+//-------------------
+
     // COLOR MODE
     $('.color-mode').click(function(){
         $('.color-mode-icon').toggleClass('active')

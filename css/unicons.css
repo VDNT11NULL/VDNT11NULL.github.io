@@ -54,7 +54,9 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
+.custom-carousel {
+  margin-top: 20px; /* Adjust this value as needed */
+}
 .uil-abacus:before { content: '\e800'; } /* '' */
 .uil-accessible-icon-alt:before { content: '\e801'; } /* '' */
 .uil-adjust-alt:before { content: '\e802'; } /* '' */

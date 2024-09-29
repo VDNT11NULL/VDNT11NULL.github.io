@@ -288,9 +288,33 @@ b, strong {
   font-size: 30px;
   color: #ffffff;
 }
+.footer ul {
+  padding: 0; /* Remove default padding */
+}
+
+.footer ul li {
+  display: inline-block; /* Make list items inline-block */
+}
+
+.footer ul li img {
+  width: 50px; /* Increase icon size */
+  height: 50px; /* Increase icon size */
+  border-radius: 50%; /* Make icons circular */
+  /* filter: brightness(0) invert(1);  */
+  /* Make icons blend with background */
+  transition: transform 0.3s ease; /* Add a hover effect */
+  /* opacity: 0.9;  */
+  /* Slight transparency for blending effect */
+}
+
+.footer ul li img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
 
 .dark-mode {
-  background: #0c0c0d;
+  /* background: #0c0c0d; */
+  background: #17171c;
 }
 .dark-mode .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.8);
@@ -327,7 +351,7 @@ b, strong {
 }
 .timeline-wrapper:before {
   content: "";
-  background: #474559;
+  background: #388563;
   width: 3px;
   height: 100%;
   position: absolute;
@@ -335,7 +359,7 @@ b, strong {
 }
 
 .timeline-yr {
-  background: #474559;
+  background: #46ba4c;
   border-radius: 100%;
   position: absolute;
   width: 75px;
@@ -518,10 +542,10 @@ b, strong {
 }
 @media (max-width: 580px) {
 	.animated-info {
-		min-width: 200px;
+		min-width: 1200px;
 	}
   .animated-item {
-    font-size: 30px;
+    font-size: 20 px;
   }
 
   .custom-btn-group {
