@@ -15,8 +15,8 @@
 
     // COLOR MODE
     $('.color-mode').click(function(){
+      $('body').toggleClass('dark-mode')
         $('.color-mode-icon').toggleClass('active')
-        $('body').toggleClass('dark-mode')
     })
 
     // HEADER
