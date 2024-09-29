@@ -40,7 +40,7 @@ a {
   transition: all 0.4s ease;
 }
 a:hover {
-  color: #ffc200 !important;
+  color: #4CAF50 !important;
 }
 
 .navbar-brand .uil {
@@ -92,14 +92,14 @@ b, strong {
   transition: all 0.4s ease;
 }
 .custom-btn:hover {
-  color: #ffc200;
+  color: #4CAF50;
 }
 .custom-btn.custom-btn-bg {
   background: #474559;
   color: #ffffff;
 }
 .custom-btn.custom-btn-bg:hover {
-  background: #ffc200;
+  background: #4CAF50;
   color: #ffffff !important;
 }
 
@@ -116,7 +116,8 @@ b, strong {
 }
 
 .animated-item {
-  color: #ffc200;
+  color: #4CAF50;
+  /* color: #ffc200; */
 }
 
 .animated-item {
@@ -314,13 +315,17 @@ b, strong {
 
 .dark-mode {
   /* background: #0c0c0d; */
-  background: #17171c;
+  /* background: #1E1E1E;       */
+  /* background: #0A0F1F;       */
+  /* background: #232931;       */
+  background: #0D1117;      
 }
 .dark-mode .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.8);
 }
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
   color: #ffc200;
+  /* color: #FFA500; */
 }
 .dark-mode .navbar[class*="headroom--not-top"] {
   background: #0c0c0d;
@@ -340,6 +345,7 @@ b, strong {
 .dark-mode .owl-carousel .owl-nav button.owl-prev,
 .dark-mode .owl-carousel button.owl-dot {
   color: #ffffff;
+  /* vdnt change */
 }
 
 .timeline-wrapper {
