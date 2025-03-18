@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedant's Blogs</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/unicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/tooplate-style.css">
+    <style>
+        .blog-card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .blog-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .blog-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+        }
+        .filter-section button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .reading-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .reading-box .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Vedant</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="project.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blogs.html" class="nav-link"><span data-hover="Blogs">Blogs</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                      </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BLOGS SECTION -->
+    <section class="blogs py-5" id="blogs">
+        <div class="container">
+            <h2 class="text-center mb-5">Blogs</h2>
+            
+            <!-- Filter Section -->
+            <div class="filter-section text-center">
+                <button class="btn btn-primary" onclick="filterBlogs('all')">All</button>
+                <button class="btn btn-secondary" onclick="filterBlogs('ai')">AI & ML</button>
+                <button class="btn btn-success" onclick="filterBlogs('tech')">Tech</button>
+                <button class="btn btn-info" onclick="filterBlogs('personal')">Personal</button>
+            </div>
+
+            <!-- Blog Cards -->
+            <div class="row" id="blog-container">
+                <!-- Blog Card 1 -->
+                <div class="col-md-4 blog-card" data-category="ai">
+                    <img src="images/blogs/uvu_net.jpg" alt="UvU Net">
+                    <h3>UvU Net: An Ensemble Generator for Image Colorization</h3>
+                    <p>Explore the innovative approach of using an ensemble architecture for image colorization, blending the power of conditional GANs, residual connections, and attention mechanisms.</p>
+                    <button class="btn btn-primary" onclick="openReadingBox('uvu-net')">Read More</button>
+                </div>
+
+                <!-- Blog Card 2 (Example for future blogs) -->
+                <div class="col-md-4 blog-card" data-category="tech">
+                    <img src="images/blogs/tech_blog.jpg" alt="Tech Blog">
+                    <h3>Future of AI in Healthcare</h3>
+                    <p>Discover how AI is revolutionizing healthcare, from diagnostics to personalized medicine, and what the future holds for this transformative technology.</p>
+                    <button class="btn btn-primary" onclick="openReadingBox('ai-healthcare')">Read More</button>
+                </div>
+
+                <!-- Blog Card 3 (Example for future blogs) -->
+                <!-- <div class="col-md-4 blog-card" data-category="personal">
+                    <img src="images/blogs/personal_blog.jpg" alt="Personal Blog">
+                    <h3>My Journey into Data Science</h3>
+                    <p>Join me as I share my personal journey into the world of data science, the challenges I faced, and the lessons I learned along the way.</p>
+                    <button class="btn btn-primary" onclick="openReadingBox('data-science-journey')">Read More</button>
+                </div> -->
+
+                <!-- Add more blog cards here as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Box -->
+    <div class="overlay" id="overlay" onclick="closeReadingBox()"></div>
+    <div class="reading-box" id="reading-box">
+        <span class="close-btn" onclick="closeReadingBox()">&times;</span>
+        <div id="reading-content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h5>Connect with Me</h5>
+                    <br>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                        <li class="mx-3">
+                            <a href="https://github.com/VDNT11NULL" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/github_logo.jpeg" alt="GitHub">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://www.linkedin.com/in/vedant-marodkar-0b142b254/" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/linkedin_logo.png" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://x.com/marodkar_vedant" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/x_logo.jpeg" alt="X">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://discordapp.com/users/769475957316255785" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/discord_logo.png" alt="Discord">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="mailto:marodkar@iitbhilai.ac.in" class="text-decoration-none">
+                                <img src="images/contacts/gmail.png" alt="Email">
+                            </a>
+                        </li>                
+                    </ul>
+                    <p class="mt-3 mb-0"> Vedant Marodkar &copy; 2024 VDNT11NULL.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter blogs by category
+        function filterBlogs(category) {
+            const blogs = document.querySelectorAll('.blog-card');
+            blogs.forEach(blog => {
+                if (category === 'all' || blog.getAttribute('data-category') === category) {
+                    blog.style.display = 'block';
+                } else {
+                    blog.style.display = 'none';
+                }
+            });
+        }
+
+        // Open reading box
+        function openReadingBox(blogId) {
+            const readingBox = document.getElementById('reading-box');
+            const overlay = document.getElementById('overlay');
+            const content = document.getElementById('reading-content');
+
+            // Load content dynamically based on blogId
+            if (blogId === 'uvu-net') {
+                content.innerHTML = `
+                    <h2>UvU Net: An Ensemble Generator for Image Colorization</h2>
+                    <p>Explore the innovative approach of using an ensemble architecture for image colorization, blending the power of conditional GANs, residual connections, and attention mechanisms.</p>
+                    <p>Read the full blog <a href="techscribe_UVU.pdf" target="_blank">here</a>.</p>
+                `;
+            } else if (blogId === 'ai-healthcare') {
+                content.innerHTML = `
+                    <h2>Future of AI in Healthcare</h2>
+                    <p>Discover how AI is revolutionizing healthcare, from diagnostics to personalized medicine, and what the future holds for this transformative technology.</p>
+                    <p>Read the full blog <a href="ai_healthcare.pdf" target="_blank">here</a>.</p>
+                `;
+            } else if (blogId === 'data-science-journey') {
+                content.innerHTML = `
+                    <h2>My Journey into Data Science</h2>
+                    <p>Join me as I share my personal journey into the world of data science, the challenges I faced, and the lessons I learned along the way.</p>
+                    <p>Read the full blog <a href="data_science_journey.pdf" target="_blank">here</a>.</p>
+                `;
+            }
+
+            readingBox.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        // Close reading box
+        function closeReadingBox() {
+            document.getElementById('reading-box').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
