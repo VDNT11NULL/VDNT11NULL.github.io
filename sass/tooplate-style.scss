@@ -17,13 +17,83 @@ $h3-font-color: #484848;
 $body-font-color: #5b5b5b;
 $text-white: #ffffff;
 $dark-mode-color: #0c0c0d;
-// $main-color: #ffc200;
+$main-color: #ffc200;
 $main-color: #4CAF50;
 $border-color: #f2f2f1;
-$button-color: #474559;
+$button-color: #8da0cadd;
 
 $small-font-size: 14px;
 $link-font-size: 16px;
+
+$primary-color: #0d6efd;
+$secondary-color: #6c757d;
+$background-light: #f8f9fa;
+$text-light: #495560;
+$background-dark: #212529;
+$text-dark: #f9f9f9;
+
+
+body {
+  background-color: $background-light;
+  color: $text-light;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $background-dark;
+    color: $text-dark;
+  }
+}
+
+.navbar {
+  background-color: $background-light;
+  transition: background-color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $background-dark;
+  }
+}
+
+.custom-btn {
+  background-color: $primary-color;
+  color: $text-light;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &.dark-mode {
+    background-color: lighten($primary-color, 10%);
+    color: $text-dark;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.footer {
+  background-color: $secondary-color;
+  color: $text-light;
+  transition: background-color 0.3s ease;
+
+  &.dark-mode {
+    background-color: darken($secondary-color, 10%);
+    color: $text-dark;
+  }
+}
+
+// Additional components like cards, buttons, etc.
+.card {
+  background-color: $background-light;
+  color: $text-light;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $background-dark;
+    color: $text-dark;
+  }
+}
+
 
 @mixin transition-effect {
 	transition: all 0.4s ease;
@@ -407,7 +477,7 @@ b, strong {
 	max-width: 432px;
 	margin-left: 6em;
 	small {
-		color: $button-color;
+		color: #243967dd;
     	font-size: $link-font-size;
     	font-weight: $font-weight-bold;
     	display: inline-block;
@@ -488,6 +558,42 @@ b, strong {
 	}
 }
 
+// Tech Stack
+.tech-stack-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-category h3 {
+    margin-bottom: 0.5rem;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tech-icons img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: brightness(0);
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .tech-icons img {
+    filter: brightness(1);
+}
+
 
 // CONTACT FORM
 .contact-form {
@@ -530,6 +636,22 @@ b, strong {
 		color: #f7f3f3;
 	}
 }
+
+// .dark-mode nav a:hover {
+//     background-color: var(--nav-hover-bg);
+//     color: var(--button-text);
+// }
+
+// .dark-mode .card, 
+// .dark-mode button {
+//     background-color: var(--card-bg);
+//     color: var(--text-color);
+//     border-color: var(--card-border);
+// }
+// .blog-content .graybox {
+//     background-color: var(--card-bg);
+//     border-left-color: var(--card-border);
+// }
 
 
 // SOCIAL LINKS
@@ -662,3 +784,4 @@ b, strong {
 		}
 	}
 }
+

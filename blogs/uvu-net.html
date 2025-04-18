@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UvU Net: An Ensemble Generator for Image Colorization</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/unicons.css">
+    <link rel="stylesheet" href="../css/theme-variables.css">
+    <link rel="stylesheet" href="../css/tooplate-style.css">
+    <style>
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .blog-content h1, .blog-content h2, .blog-content h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-content figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .blog-content figcaption {
+            font-style: italic;
+        }
+
+        .text-center table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        .text-center th, .text-center td {
+            padding: 10px;
+            border: 1px solid var(--graybox-border);
+        }
+
+        .text-center th {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function applyTheme() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+    
+            document.documentElement.style.setProperty('--bg-color', isDarkMode ? 'var(--dark-bg-color)' : 'var(--light-bg-color)');
+            document.documentElement.style.setProperty('--text-color', isDarkMode ? 'var(--dark-text-color)' : 'var(--light-text-color)');
+            document.documentElement.style.setProperty('--graybox-bg', isDarkMode ? 'var(--dark-graybox-bg)' : 'var(--light-graybox-bg)');
+            document.documentElement.style.setProperty('--graybox-border', isDarkMode ? 'var(--dark-graybox-border)' : 'var(--light-graybox-border)');
+        }
+    
+        applyTheme();
+    
+        // Optional: Listen for theme changes and update dynamically
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+    </script>
+    
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class='uil uil-user'></i> Vedant</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="../index.html#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="../project.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../blogs.html" class="nav-link"><span data-hover="Blogs">Blogs</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BLOG CONTENT -->
+    <section class="blog-content">
+        <div class="container">
+            <h1>UvU Net: An Ensemble Generator for Image Colorization</h1>
+            <!-- <p><em>Published on: October 15, 2025</em></p> -->
+
+            <p>Remember those scenes in crime dramas where a witness describes a suspect while a skilled artist transforms their words into a detailed black-and-white portrait? But have you ever wondered if we can use an ML model to colorize those sketches? Or, even cooler, if you can gift your grandparents their colorful portraits generated using original lifeless Black and White ones.</p>
+
+            <h2>Introduction</h2>
+            <p>Generative Adversarial Networks (GANs) are Deep Learning models used for multiple tasks like image generation, style transfer, image translation, etc. The Generator and Discriminator are two core components, where one is trained to create fake images from random noise, and the other tries to spot the fakes. Over time and through iterative training, they improve and reach a state where the Generator can ideally produce fakes as realistic as the originals.</p>
+
+            <figure>
+                <img src="../images/undraw/blogs/gan_working.png" alt="GAN working">
+                <figcaption>Figure 1: Working of GANs in general</figcaption>
+            </figure>
+
+            <p>Consider this as a game between two players: a counterfeiter (the Generator) and a detective (the Discriminator). The counterfeiter practices creating fake art from random noises, that later looks more and more real, while the detective gets better at spotting fakes. As they challenge each other, the counterfeiter becomes so skilled that their forgeries become nearly indistinguishable from authentic pieces.</p>
+
+            <div class="graybox">
+                <p>Even Yann LeCun (Meta's chief AI scientist and developer of CNNs) described GANs as <strong>the most interesting idea in the last 10 years in Machine Learning.</strong></p>
+            </div>
+
+            <h2>Ensemble Novelty</h2>
+            <p>An ensemble in machine learning refers to the process of combining multiple models to achieve improved performance, accuracy, and robustness compared to using individual models. It is widely regarded as a powerful technique for leveraging the strengths of different architectures to overcome their individual limitations.</p>
+
+            <p>For our task of image generation, we (me and a bunch of my friends) came up with an <strong>original</strong> idea to utilize an ensemble of the popular U-Net architecture, which is known for its efficacy in image-to-image translation tasks. The approach lies in designing the generator with the help of two U Nets. The outer one is a deeper network with <u>alternate residual connections</u>. Residual connections aka skip connections help preserve important features and mitigate the problem of vanishing gradient by enabling the flow of information directly across layers in deep networks. Whereas the inner shallow U Net can be treated as an independent network being trained on processed data fed by the second layer of the outer U Net.</p>
+
+            <p>The two major benefits that we were able to observe were as follows:</p>
+            <ol>
+                <li><strong>Better Feature Learning:</strong> Alternating feed-forwarding of data to the decoder helps the model learn and extract features in a better way for enhanced style transfer.</li>
+                <li><strong>Bottleneck Compensation:</strong> One major drawback of U-Net-based models is the bottleneck at the end of the encoder, where the latent space is overly compact or compressed, potentially leading to a loss of critical information (2x2 for a 256x256 image and a 7-layer deep outer encoder). The inner encoder is designed with an additional encoder block (highlighted in blue) to compensate for the features captured at the latent space of the Outer U-Net.</li>
+            </ol>
+
+            <h2>Attention Mechanism</h2>
+            <p>I hope you guys are familiar with the concept of attention used in transformers or basic encoder-decoder based Seq2Seq models. A moment for you to wonder why we are discussing this technique here in the domain of image and vision as attention was originally introduced in the domain of Natural Language Processing for improving performance in tasks like machine translation by focusing on relevant parts of the input sequence while generating each output token. But after an intense discussion with our Machine Learning course instructor, we learned that attention is not restricted to any particular domain and we can utilize it as per our requirements given that it serves the purpose it was designed for.</p>
+
+            <figure>
+                <img src="../images/undraw/blogs/uvu_net.jpg" alt="UvU Net Generator Architecture">
+                <figcaption>Figure 2: Generator Architecture</figcaption>
+            </figure>
+
+            <p>So in order to add contextual learning, we implemented Bahdanau attention to generate attention scores (used as features in our case). The output of Inner U Net's second's decoder block and Outer U Net's third decoder block are passed as current states and hidden states, if referred in context of original terminologies. Moving forward, we aim to explore other advanced attention mechanisms like global and local attentions, integrate larger datasets particularly featuring Indian faces, and optimize the model for faster training.</p>
+
+            <h2>Model Training and Results</h2>
+            <p>I would like to highlight that training Generative Adversarial Networks is a highly resource-intensive process, especially when working with large datasets like the popular celebrity faces dataset <strong>Celeba</strong>. We preprocessed nearly 150,000 image samples by performing Canny edge detection and background removal for high quality synthetic sketche generation. The training was on NVIDIA RTX 3060 (12GB VRAM) divided across two sessions, each lasting approximately 16 hours.</p>
+
+            <div class="text-center">
+                <table>
+                    <tr>
+                        <th>Sample Input Sketches</th>
+                        <th>Generated Colored Images</th>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/undraw/blogs/input_sketch.png" alt="Input Sketch"></td>
+                        <td><img src="../images/undraw/blogs/generated_output.png" alt="Generated Output"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>In conclusion, through this blog, I have tried to present the innovative approach of using an ensemble architecture for image colorization, blending the power of conditional GANs, residual connections, and attention mechanisms. I hope I was able to help you grasp the key concepts behind the model's functioning, such as the importance of feature learning, the role of attention in contextual understanding, and the nuances of GAN training.</p>
+
+            <a href="../blogs.html" class="btn btn-primary">Back to Blogs</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h5>Connect with Me</h5>
+                    <br>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                        <li class="mx-3">
+                            <a href="https://github.com/VDNT11NULL" target="_blank" class="text-decoration-none">
+                                <img src="../images/contacts/github_logo.jpeg" alt="GitHub">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://www.linkedin.com/in/vedant-marodkar-0b142b254/" target="_blank" class="text-decoration-none">
+                                <img src="../images/contacts/linkedin_logo.png" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://x.com/marodkar_vedant" target="_blank" class="text-decoration-none">
+                                <img src="../images/contacts/x_logo.jpeg" alt="X">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://discordapp.com/users/769475957316255785" target="_blank" class="text-decoration-none">
+                                <img src="../images/contacts/discord_logo.png" alt="Discord">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="mailto:marodkar@iitbhilai.ac.in" class="text-decoration-none">
+                                <img src="../images/contacts/gmail.png" alt="Email">
+                            </a>
+                        </li>                
+                    </ul>
+                    <p class="mt-3 mb-0"> Vedant Marodkar &copy; 2024 VDNT11NULL.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Headroom.js"></script>
+    <script src="../js/jQuery.headroom.js"></script>
+    <script src="../js/smoothscroll.js"></script>
+    <script src="../js/custom.js"></script>
+</body>
+</html>
