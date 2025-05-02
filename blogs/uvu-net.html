@@ -6,99 +6,175 @@
     <title>UvU Net: An Ensemble Generator for Image Colorization</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/unicons.css">
-    <link rel="stylesheet" href="../css/theme-variables.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../css/tooplate-style.css">
     <style>
         .blog-content {
-            max-width: 800px;
+            max-width: 90%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 2rem 1rem;
         }
 
         .blog-content img {
             max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
             border-radius: 10px;
+            margin: 1rem auto;
+            display: block;
         }
 
-        .blog-content h1, .blog-content h2, .blog-content h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .blog-content h1 {
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            margin: 2rem 0 1rem;
+        }
+
+        .blog-content h2, .blog-content h3 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            margin: 1.5rem 0 0.5rem;
         }
 
         .blog-content p {
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
         .blog-content figure {
             text-align: center;
-            margin: 20px 0;
+            margin: 2rem 0;
         }
 
         .blog-content figcaption {
             font-style: italic;
+            font-size: 0.875rem;
+            color: var(--text-color);
+            margin-top: 0.5rem;
         }
 
-        .text-center table {
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        .text-center th, .text-center td {
-            padding: 10px;
+        .blog-content .graybox {
+            background: var(--graybox-bg);
             border: 1px solid var(--graybox-border);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
         }
 
-        .text-center th {
+        .blog-content table {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            background: var(--card-bg);
+        }
+
+        .blog-content th, .blog-content td {
+            padding: 0.75rem;
+            border: 1px solid var(--graybox-border);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .blog-content th {
             font-weight: bold;
+            background: var(--graybox-bg);
+        }
+
+        .blog-content td img {
+            max-height: 200px;
+            margin: 0;
+        }
+
+        .blog-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .blog-content .btn-primary-ong {
+            margin-top: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .blog-content {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .blog-content h1 {
+                font-size: clamp(1.6rem, 4vw, 2rem);
+            }
+
+            .blog-content h2, .blog-content h3 {
+                font-size: clamp(1.3rem, 3vw, 1.6rem);
+            }
+
+            .blog-content img {
+                max-height: 300px;
+            }
+
+            .blog-content table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .blog-content td img {
+                max-height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-content {
+                padding: 1rem 0.25rem;
+            }
+
+            .blog-content img {
+                max-height: 250px;
+            }
+
+            .blog-content table {
+                font-size: 0.875rem;
+            }
+
+            .blog-content td img {
+                max-height: 120px;
+            }
         }
     </style>
-    <script>
-        function applyTheme() {
-            const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-    
-            document.documentElement.style.setProperty('--bg-color', isDarkMode ? 'var(--dark-bg-color)' : 'var(--light-bg-color)');
-            document.documentElement.style.setProperty('--text-color', isDarkMode ? 'var(--dark-text-color)' : 'var(--light-text-color)');
-            document.documentElement.style.setProperty('--graybox-bg', isDarkMode ? 'var(--dark-graybox-bg)' : 'var(--light-graybox-bg)');
-            document.documentElement.style.setProperty('--graybox-border', isDarkMode ? 'var(--dark-graybox-border)' : 'var(--light-graybox-border)');
-        }
-    
-        applyTheme();
-    
-        // Optional: Listen for theme changes and update dynamically
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
-    </script>
-    
 </head>
 <body>
     <!-- MENU -->
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container">
             <a class="navbar-brand" href="../index.html"><i class='uil uil-user'></i> Vedant</a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a href="../index.html#about" class="nav-link"><span data-hover="About">About</span></a>
+                        <a href="../index.html#about" class="nav-link" aria-label="Go to About section"><span data-hover="About">About</span></a>
                     </li>
                     <li class="nav-item">
-                      <a href="../project.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                        <a href="../project.html" class="nav-link" aria-label="Go to Projects section"><span data-hover="Projects">Projects</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="../index.html#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                        <a href="../index.html#resume" class="nav-link" aria-label="Go to Resume section"><span data-hover="Resume">Resume</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="../blogs.html" class="nav-link"><span data-hover="Blogs">Blogs</span></a>
+                        <a href="../blogs.html" class="nav-link" aria-label="Go to Blogs section"><span data-hover="Blogs">Blogs</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="../index.html#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                        <a href="../index.html#contact" class="nav-link" aria-label="Go to Contact section"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                            <i class="color-mode-icon"></i>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -106,7 +182,7 @@
     </nav>
 
     <!-- BLOG CONTENT -->
-    <section class="blog-content">
+    <section class="blog-content full-screen">
         <div class="container">
             <h1>UvU Net: An Ensemble Generator for Image Colorization</h1>
             <!-- <p><em>Published on: October 15, 2025</em></p> -->
@@ -121,7 +197,7 @@
                 <figcaption>Figure 1: Working of GANs in general</figcaption>
             </figure>
 
-            <p>Consider this as a game between two players: a counterfeiter (the Generator) and a detective (the Discriminator). The counterfeiter practices creating fake art from random noises, that later looks more and more real, while the detective gets better at spotting fakes. As they challenge each other, the counterfeiter becomes so skilled that their forgeries become nearly indistinguishable from authentic pieces.</p>
+            <p>Consider this as a game between two players: a counterfeiter (the Generator) and a detective (the Discriminator). The counterfeiter practices creating fake art from random noises, that later looks more and more real, while the detective gets better at spotting fakes. As they challenge each other, the counterfeiter becomes so skilled that their forgeries becomeNearly indistinguishable from authentic pieces.</p>
 
             <div class="graybox">
                 <p>Even Yann LeCun (Meta's chief AI scientist and developer of CNNs) described GANs as <strong>the most interesting idea in the last 10 years in Machine Learning.</strong></p>
@@ -167,7 +243,7 @@
             <h2>Conclusion</h2>
             <p>In conclusion, through this blog, I have tried to present the innovative approach of using an ensemble architecture for image colorization, blending the power of conditional GANs, residual connections, and attention mechanisms. I hope I was able to help you grasp the key concepts behind the model's functioning, such as the importance of feature learning, the role of attention in contextual understanding, and the nuances of GAN training.</p>
 
-            <a href="../blogs.html" class="btn btn-primary">Back to Blogs</a>
+            <a href="../blogs.html" class="btn btn-primary-ong">Back to Blogs</a>
         </div>
     </section>
 
@@ -200,23 +276,23 @@
                             </a>
                         </li>
                         <li class="mx-3">
-                            <a href="mailto:marodkar@iitbhilai.ac.in" class="text-decoration-none">
+                            <a href="/cdn-cgi/l/email-protection#a0cdc1d2cfc4cbc1d2e0cbcbc7d1cbcacfc2ca8dc2c08dcac3" class="text-decoration-none">
                                 <img src="../images/contacts/gmail.png" alt="Email">
                             </a>
                         </li>                
                     </ul>
-                    <p class="mt-3 mb-0"> Vedant Marodkar &copy; 2024 VDNT11NULL.</p>
+                    <p class="mt-3 mb-0">Vedant Marodkar &copy; 2024 VDNT11NULL.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/Headroom.js"></script>
     <script src="../js/jQuery.headroom.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/smoothscroll.js"></script>
     <script src="../js/custom.js"></script>
-</body>
-</html>
