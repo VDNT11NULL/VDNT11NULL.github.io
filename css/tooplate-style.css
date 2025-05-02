@@ -10,7 +10,6 @@ https://www.tooplate.com/view/2115-marvel
 
 /* Define custom properties for light and dark themes */
 :root {
-    /* Light theme variables */
     --light-text-color: #5b5b5b;
     --light-bg-color: #ffffff;
     --light-graybox-bg: #f0f0f0;
@@ -19,10 +18,9 @@ https://www.tooplate.com/view/2115-marvel
     --light-nav-bg: #ffffff;
     --light-footer-bg: #474559;
     --light-link-color: #4CAF50;
-    --light-link-hover-color: #4CAF50;
-
-    /* Dark theme variables */
-    --dark-text-color: #ffffff;
+    --light-link-hover-color: #4CAF50;;
+    
+    --dark-text-color: #f6f6f6;
     --dark-bg-color: #0D1117;
     --dark-graybox-bg: #1f1f1f;
     --dark-graybox-border: #2f2f2f;
@@ -30,32 +28,18 @@ https://www.tooplate.com/view/2115-marvel
     --dark-nav-bg: #0b1117;
     --dark-footer-bg: #0b1117;
     --dark-link-color: #ffffff;
-    --dark-link-hover-color: #4CAF50;
-
-    /* Default variables (initially set to light theme) */
-    --text-color: var(--light-text-color);
-    --bg-color: var(--light-bg-color);
-    --graybox-bg: var(--light-graybox-bg);
-    --graybox-border: var(--light-graybox-border);
-    --card-bg: var(--light-card-bg);
-    --nav-bg: var(--light-nav-bg);
-    --footer-bg: var(--light-footer-bg);
-    --link-color: var(--light-link-color);
-    --link-hover-color: var(--light-link-hover-color);
+    --dark-link-hover-color: #4CAF50;;
 }
 
-/* Global styles */
 body {
     font-family: "Maven Pro", sans-serif;
-    font-size: 16px;
-    padding-top: 2.5rem;
+    padding-top: 3.5rem;
     color: var(--text-color);
     background: var(--bg-color);
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .full-screen {
@@ -111,13 +95,12 @@ a:hover {
 
 .navbar-brand .uil {
     font-size: 2.5rem;
-    color: var(--text-color); /* Ensure the Unicons icon uses the theme color */
 }
 
 p {
     font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 1.8;
+    font-weight: 300;
+    line-height: 1.6;
     color: var(--text-color);
 }
 
@@ -130,17 +113,14 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: clamp(2rem, 5vw, 2.8rem);
     margin: 1.5rem 0;
-    font-weight: 900;
 }
 
 h2 {
     font-size: clamp(1.8rem, 4vw, 2.4rem);
-    font-weight: 700;
 }
 
 h3 {
     font-size: clamp(1.5rem, 3vw, 1.8rem);
-    font-weight: 700;
 }
 
 .custom-btn {
@@ -159,16 +139,13 @@ h3 {
 }
 
 .custom-btn.custom-btn-bg {
-    background: #ffffff;
-    color: #4CAF50;
-    border: 1px solid #4CAF50;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: var(--light-footer-bg);
+    color: #ffffff;
 }
 
 .custom-btn.custom-btn-bg:hover {
-    background: #4CAF50;
+    background: var(--link-color);
     color: #ffffff !important;
-    border-color: #4CAF50;
 }
 
 .animated {
@@ -185,7 +162,7 @@ h3 {
 
 .animated-item {
     color: var(--link-color);
-    font-size: clamp(1.5rem, 4vw, 2.375rem);
+    font-size: clamp(1.25rem, 4vw, 2.375rem);
     line-height: inherit;
     display: block;
     opacity: 0;
@@ -216,15 +193,15 @@ h3 {
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 999999;
-    background: var(--nav-bg);
-    border-bottom: 1px solid var(--graybox-border);
-    padding: 0.5rem 1rem;
-    transition: transform 200ms linear;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999999;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--graybox-border);
+  padding: 0.5rem 1rem;
+  transition: transform 200ms linear;
 }
 
 .navbar[class*="-unpinned"] {
@@ -238,34 +215,66 @@ h3 {
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--text-color);
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 1rem; /* Reduced to 16px to prevent overflow */
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 16px;
     overflow: hidden;
-    color: var(--text-color); /* Ensure default color uses theme variable */
+    span {
+    	position: relative;
+		display: inline-block;
+		transition: transform 0.3s;
+		&:before {
+			position: absolute;
+			top: 100%;
+			content: attr(data-hover);
+			transform: translate3d(0,0,0);
+		}
+    }
 }
 
 .nav-link span {
     position: relative;
     display: inline-block;
-    transition: opacity 0.3s ease;
-    color: inherit;
+    transition: transform 0.3s;
 }
 
 .nav-link span:before {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 100%;
     content: attr(data-hover);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
-    color: var(--link-hover-color);
+    transform: translate3d(0, 0, 0);
+}
+
+.nav-link span:before {
+  position: absolute;
+  top: 100%;
+  content: attr(data-hover);
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+/* Show only on hover */
+.navbar-light .navbar-nav .nav-link:hover span:before {
+  opacity: 1;
+}
+
+
+.navbar-collapse {
+  background: var(--nav-bg);
+  text-align: center;
+  padding-bottom: 0.5rem;
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
@@ -275,18 +284,7 @@ h3 {
 
 .navbar-light .navbar-nav .nav-link:focus span,
 .navbar-light .navbar-nav .nav-link:hover span {
-    opacity: 0;
-}
-
-.navbar-light .navbar-nav .nav-link:focus span:before,
-.navbar-light .navbar-nav .nav-link:hover span:before {
-    opacity: 1;
-}
-
-.navbar-collapse {
-    background: var(--nav-bg);
-    text-align: center;
-    padding-bottom: 0.5rem;
+    transform: translateY(-100%);
 }
 
 .navbar-toggler {
@@ -355,7 +353,7 @@ h3 {
 .color-mode-icon.active:after {
     content: '\eb65';
     font-size: 1.875rem;
-    color: var(--text-color);
+    color: #ffffff;
 }
 
 .footer {
@@ -470,8 +468,6 @@ h3 {
     max-width: 50rem;
     margin: 0 auto;
     padding: 1.25rem;
-    background: var(--bg-color);
-    color: var(--text-color);
 }
 
 .blog-content img {
@@ -502,20 +498,11 @@ h3 {
     font-size: 0.875rem;
 }
 
-.blog-content .graybox {
-    background: var(--graybox-bg);
-    border-left: 4px solid var(--graybox-border);
-    padding: 1rem;
-    margin: 1rem 0;
-}
-
 .text-center table {
     margin: 1.25rem auto;
     border-collapse: collapse;
     width: 100%;
     max-width: 40rem;
-    color: var(--text-color);
-    background: var(--card-bg);
 }
 
 .text-center th,
@@ -671,7 +658,7 @@ h3 {
 }
 
 .contact-form .submit-btn:hover {
-    background: var(--footer-bg);
+    background: var(--light-footer-bg);
 }
 
 .contact-info {
@@ -710,27 +697,21 @@ body.dark-mode {
     --link-hover-color: var(--dark-link-hover-color);
 }
 
-/* Ensure navbar styles are applied correctly in dark mode */
 body.dark-mode .navbar {
     background: var(--nav-bg);
+    border-bottom: 1px solid var(--graybox-border);
 }
 
-body.dark-mode .navbar-light .navbar-nav .nav-link,
-body.dark-mode .navbar-light .navbar-nav .nav-link span {
-    color: var(--text-color) !important; /* Override Bootstrap defaults */
-}
-
-body.dark-mode .navbar-light .navbar-nav .nav-link:hover,
-body.dark-mode .navbar-light .navbar-nav .nav-link:focus {
-    color: var(--link-hover-color) !important;
-}
-
-body.dark-mode .navbar-light .navbar-brand {
+body.dark-mode .navbar-light .navbar-nav .nav-link {
     color: var(--text-color);
 }
 
-body.dark-mode .navbar-light .navbar-brand .uil {
-    color: var(--text-color); /* Ensure Unicons icon is visible */
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--link-hover-color);
+}
+
+body.dark-mode .footer {
+    background: var(--footer-bg);
 }
 
 body.dark-mode .blog-card {
@@ -740,7 +721,15 @@ body.dark-mode .blog-card {
 
 body.dark-mode .graybox {
     background: var(--graybox-bg);
-    border-left: 4px solid var(--graybox-border);
+    border: 1px solid var(--graybox-border);
+}
+
+body.dark-mode a {
+    color: var(--link-color);
+}
+
+body.dark-mode a:hover {
+    color: var(--link-hover-color) !important;
 }
 
 body.dark-mode .small-text {
@@ -749,6 +738,7 @@ body.dark-mode .small-text {
 }
 
 body.dark-mode .feature-card .uil,
+body.dark-mode .navbar-light .navbar-brand,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -773,16 +763,6 @@ body.dark-mode .owl-carousel button.owl-dot {
 body.dark-mode .text-center th,
 body.dark-mode .text-center td {
     border-color: var(--graybox-border);
-}
-
-/* Adjust About section layout */
-.about-text {
-    padding-right: 1rem;
-}
-
-.about-image {
-    max-width: 80%;
-    margin: 0 auto;
 }
 
 /* Media Queries */
@@ -844,8 +824,7 @@ body.dark-mode .text-center td {
     }
 
     .navbar-expand-sm .navbar-nav .nav-link {
-        padding: 0.5rem 1rem;
-        font-size: 0.9375rem;
+        padding: 0.5rem 1.25rem;
     }
 
     .blog-card {
@@ -875,15 +854,6 @@ body.dark-mode .text-center td {
     .timeline-info {
         margin-left: 3.5rem;
     }
-
-    .about-text {
-        padding-right: 0;
-    }
-
-    .about-image {
-        max-width: 100%;
-        margin-top: 2rem;
-    }
 }
 
 @media (max-width: 576px) {
@@ -903,9 +873,8 @@ body.dark-mode .text-center td {
         display: block;
         margin: 0.625rem 0;
     }
-
     .navbar-expand-sm .navbar-nav .nav-link {
-        font-size: 0.875rem;
+      font-size: 0.9375rem; /* Further reduced font size for very small screens */
     }
 
     .owl-theme .owl-nav {

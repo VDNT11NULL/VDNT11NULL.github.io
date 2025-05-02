@@ -16,6 +16,22 @@
         localStorage.setItem('darkMode', 'disabled');
     }
 
+    // Initialize theme on page load
+    function initializeTheme() {
+        const storedTheme = localStorage.getItem('darkMode');
+        if (storedTheme === null) {
+            // Default to dark mode for first-time visitors
+            enableDarkMode();
+        } else if (storedTheme === 'enabled') {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+    }
+
+    // Call initializeTheme immediately to apply theme before rendering
+    initializeTheme();
+
     // COLOR MODE TOGGLE
     $('.color-mode').click(function() {
         const isDarkMode = $('body').hasClass('dark-mode');
@@ -28,10 +44,13 @@
 
     // HANDLE SYSTEM PREFERENCE CHANGE
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-        if (event.matches) {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
+        // Only apply system preference if no user preference is stored
+        if (localStorage.getItem('darkMode') === null) {
+            if (event.matches) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
         }
     });
 
