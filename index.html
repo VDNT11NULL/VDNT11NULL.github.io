@@ -1,427 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-  
+    <meta name="description" content="Vedant Marodkar's Portfolio">
+    <meta name="author" content="Vedant Marodkar">
     <title>Vedant Marodkar's Portfolio</title>
-  
+
+    <!-- CSS files -->
     <link rel="icon" href="images/undraw/Group 2.ico" type="image/x-icon">
-  
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/unicons.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    
-    <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
-  </head>
-  
+
+    <!-- Load scripts in the head with defer to ensure correct order -->
+    <script defer src="js/jquery-3.3.1.min.js"></script>
+    <script defer src="js/custom.js"></script>
+    <script defer src="js/popper.min.js"></script>
+    <script defer src="js/bootstrap.min.js"></script>
+    <script defer src="js/Headroom.js"></script>
+    <script defer src="js/jQuery.headroom.js"></script>
+    <script defer src="js/owl.carousel.min.js"></script>
+    <script defer src="js/smoothscroll.js"></script>
+</head>
+
+<body>
     <!-- MENU -->
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container">
             <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Vedant</a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                        <a href="#about" class="nav-link" aria-label="Go to About section"><span data-hover="About">About</span></a>
                     </li>
                     <li class="nav-item">
-                      <a href="project.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                        <a href="project.html" class="nav-link" aria-label="Go to Projects section"><span data-hover="Projects">Projects</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                        <a href="#resume" class="nav-link" aria-label="Go to Resume section"><span data-hover="Resume">Resume</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="blogs.html" class="nav-link"><span data-hover="Blogs">Blogs</span></a>
+                        <a href="blogs.html" class="nav-link" aria-label="Go to Blogs section"><span data-hover="Blogs">Blogs</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                        <a href="#contact" class="nav-link" aria-label="Go to Contact section"><span data-hover="Contact">Contact</span></a>
                     </li>
                 </ul>
-
                 <ul class="navbar-nav ml-lg-auto">
-                    <div class="ml-lg-4">
-                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                        <i class="color-mode-icon"></i>
-                      </div>
-                    </div>
+                    <li class="nav-item">
+                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                            <i class="color-mode-icon"></i>
+                            <span class="color-mode-text">Toggle Theme</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Rest of the index.html content remains the same -->
     <!-- ABOUT -->
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
         <div class="container">
-            <div class="row">
-                
+            <div class="row align-items-center">
                 <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                     <div class="about-text">
-                        <!-- <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small> -->
                         <h1 class="animated animated-text">
                             <span class="mr-2">Hey folks, I'm</span>
-                                <div class="animated-info">
-                                    <span class="animated-item">Vedant </span>
-                                    <span class="animated-item">ML Engineer</span>
-                                    <!-- <span class="animated-item">DSAI Undergrad</span> -->
-                                    <span class="animated-item">Data Scientist</span>
-                                </div>
+                            <div class="animated-info">
+                                <span class="animated-item">Vedant</span>
+                                <span class="animated-item">ML Engineer</span>
+                                <span class="animated-item">Data Scientist</span>
+                            </div>
                         </h1>
-
-                        <p>Hey there! I'm <b>Vedant Marodkar</b>, a passionate Data Science and Artificial Intelligence <b>(DSAI)</b> undergrad from the <b>Indian Institute of Technology (IIT) Bhilai</b>. With a strong foundation in machine learning, data analysis, and AI model development, I am always eager to solve real-world problems using cutting-edge technologies. My interests include <b>deep learning, computer vision, and privacy preserving techniques in ML</b>, and I enjoy building innovative solutions that drive meaningful impact. In my free time, I love watching cricket, esports, and anime, but my greatest joy comes from listening to lofi music. </p>
-                        
+                        <p>Hey there! I'm <b>Vedant Marodkar</b>, a passionate Data Science and Artificial Intelligence <b>(DSAI)</b> undergrad from the <b>Indian Institute of Technology (IIT) Bhilai</b>. With a strong foundation in machine learning, data analysis, and AI model development, I am always eager to solve real-world problems using cutting-edge technologies. My interests include <b>deep learning, computer vision, and privacy-preserving techniques in ML</b>, and I enjoy building innovative solutions that drive meaningful impact. In my free time, I love watching cricket, esports, and anime, but my greatest joy comes from listening to lofi music.</p>
                         <div class="custom-btn-group mt-4" id="resume">
-                            <a href="https://raw.githubusercontent.com/VDNT11NULL/VDNT11NULL.github.io/main/Resume/VDNT_resume_v11.pdf" class="btn mr-lg-2 custom-btn" download>
-                                <i class='uil uil-file-alt'></i> Download Resume
+                            <a href="https://raw.githubusercontent.com/VDNT11NULL/VDNT11NULL.github.io/main/Resume/VDNT_resume_v11.pdf" class="btn custom-btn custom-btn-bg" download>
+                                Download Resume
                             </a>
                         </div>
-                        
-                          
                     </div>
                 </div>
-
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="about-image svg">
-                        <img src="images/undraw/Group1_green.svg" class="img-fluid" alt="svg image">
-                        <!-- <img src="images/undraw/Group 1.svg" class="img-fluid" alt="svg image"> -->
+                        <img src="images/undraw/Group1_green.svg" class="img-fluid" alt="About Illustration" loading="lazy">
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-    <!-- <section id="tech-stack" class="tech-stack-section">
-        <h2>Tech Stack</h2>
-        <div class="tech-stack-grid">
-            Languages
-            <div class="tech-category">
-                <h3>Languages</h3>
-                <div class="tech-icons">
-                    <img src="icons/c.png" alt="C" />
-                    <img src="icons/cpp.png" alt="C++" />
-                    <img src="icons/python.png" alt="Python" />
-                    <img src="icons/sql.png" alt="SQL" />
-                    <img src="icons/html.png" alt="HTML" />
-                    <img src="icons/css.png" alt="CSS" />
-                    <img src="icons/latex.png" alt="LaTeX" />
-                </div>
-            </div> -->
-    
-            <!-- ML Libraries -->
-            <!-- <div class="tech-category">
-                <h3>ML Libraries</h3>
-                <div class="tech-icons">
-                    <img src="icons/pytorch.png" alt="PyTorch" />
-                    <img src="icons/tensorflow.png" alt="TensorFlow" />
-                    <img src="icons/scikit-learn.png" alt="scikit-learn" />
-                    <img src="icons/huggingface.png" alt="HuggingFace" />
-                    <img src="icons/keras.png" alt="Keras" />
-                    <img src="icons/numpy.png" alt="NumPy" />
-                    <img src="icons/pandas.png" alt="Pandas" />
-                </div>
-            </div> -->
-    
-            <!-- Database & Deployments -->
-            <!-- <div class="tech-category">
-                <h3>Database & Deployments</h3>
-                <div class="tech-icons">
-                    <img src="icons/linux.png" alt="Linux" />
-                    <img src="icons/aws.png" alt="AWS" />
-                    <img src="icons/docker.png" alt="Docker" />
-                </div>
-            </div> -->
-    
-            <!-- Tools -->
-            <!-- <div class="tech-category">
-                <h3>Softwares & Tools</h3>
-                <div class="tech-icons">
-                    <img src="icons/vscode.png" alt="VS Code" />
-                    <img src="icons/github.png" alt="GitHub" />
-                    <img src="icons/colab.png" alt="Google Colab" />
-                    <img src="icons/matlab.png" alt="MATLAB" />
-                </div>
-            </div>
-        </div>
-    </section> -->
-    
-
-
-<!-- FEATURES -->
-<section class="resume py-5 d-lg-flex justify-content-center align-items-center">
-
-  <div class="container">
-      <div class="row">
-
-          <div class="col-lg-6 col-12">
-              <h2 class="mb-4">Experiences</h2>
-
-              <div class="timeline">
-                  <!-- Currently seeking internships entry -->
-                  <div class="timeline-wrapper">
-                      <div class="timeline-yr">
-                          <span>Present</span>
-                      </div>
-                      <div class="timeline-info">
-                          <p>Currently seeking internship opportunities in the field of Data Science and Machine Learning to apply my skills and contribute to innovative projects. You can contact <a href="#contact">here</a> if you are intersed in hiring me.</p>
-                      </div>
-                  </div>
-
-                  <div class="timeline-wrapper">
-                    <div class="timeline-yr">
-                        <span>Present</span>
-                    </div>
-                    <div class="timeline-info">
-                        <h3><span>AI Research Fellow</span><small>CHANAKYA Fellowship Program, TiH-IIT Bombay</small></h3>
-                        <p>Currently working as a research fellow on the Laser Bending Project with funding of <b>Rs. 6 Lakhs</b> by TiH-IITB. I am working in the domain of AIML to automate the laser bending process at industry-level standards by building an ML model for predicting machine parameters, developing a robust algorithm for angle measurements in dynamic environments, and generating G-Code with hardware integration and implementation.</p>
-                        <p><b>Tools & technologies used:</b> OpenCV, PyTorch, Panda gym, Raspberry Pi</p>
-                    </div>
-                </div>
-
-                  <!-- Project Manager entry -->
-                  <div class="timeline-wrapper">
-                      <div class="timeline-yr">
-                          <span>Present</span>
-                      </div>
-                      <div class="timeline-info">
-                          <h3><span>DSAI Club</span><small>Core Member</small></h3>
-                          <p>I was recently recruited for the post of Core member of DSAI club where I actively participate by developeing projects in the field of AI and ML. </p>
-                      </div>
-                  </div>
-
-                  <!-- UX Designer entry -->
-                  <div class="timeline-wrapper">
-                      <div class="timeline-yr">
-                          <span>2020-21</span>
-                      </div>
-                      <div class="timeline-info">
-                          <h3><span>Epsilon Robotics Club</span><small>Member</small></h3>
-                          <p>During my tensure as a member at ou institute's robotic club, I learned few technical skills like <b>Arduino, IR sensors, etc.</b></p>
-                      </div>
-                  </div>
-
-              </div>
-          </div>
-
-          <div class="col-lg-6 col-12">
-              <h2 class="mb-4 mobile-mt-2">Educations</h2>
-
-              <div class="timeline">
-                  <div class="timeline-wrapper">
-                      <div class="timeline-yr">
-                          <span>Present</span>
-                      </div>
-                      <div class="timeline-info">
-                          <h3><span>IIT Bhilai</span><small>B.Tech</small></h3>
-                          <p>I am currently a 3rd year undergraduate student pursuing Data Science and Artificial Intelligence (DSAI) at IIT Bhilai, Chhattisgarh, India.</p>
-                      </div>                          
-                  </div>
-
-                  <div class="timeline-wrapper">
-                      <div class="timeline-yr">
-                          <span>2020-22</span>
-                      </div>
-                      <div class="timeline-info">
-                          <h4><span>Dr. Ambedkar College</span><small>Higher Secondary School</small></h4>
-                          <p>I completed my Higher Secondary Education (Class 11 and 12) choosing Science stream, achieving a percentage of <b>92.3%.</b></p>
-                      </div>
-                  </div>
-                  <div class="timeline-wrapper">
-                      <div class="timeline-yr">
-                          <span>2018-20</span>
-                      </div>
-                      <div class="timeline-info">
-                          <h3><span>T.B.R.A.N.'s Mundle English Medium School</span><small>Secondary School</small></h3>
-                          <p>I completed my Secondary Education (Class 10) with a strong performance, achieving a percentage of <b>97.2%.</b></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-
-
-<!-- CONTACT -->
-<!-- <section class="contact py-5" id="old_contact">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-5 mr-lg-5 col-12">
-        <div class="google-map w-100">
-          <iframe src="YOUR_NEW_GOOGLE_MAP_EMBED_LINK" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-
-        <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
-          <div class="contact-info-item">
-            <h3 class="mb-3 text-white">Say hello</h3>
-            <p class="footer-text mb-0">YOUR_PHONE_NUMBER</p>
-            <p><a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></p>
-          </div>
-
-          <ul class="social-links">
-               <li><a href="YOUR_DRIBBBLE_URL" class="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
-               <li><a href="YOUR_INSTAGRAM_URL" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
-               <li><a href="YOUR_YOUTUBE_URL" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-6 col-12">
-        <div class="contact-form">
-          <h2 class="mb-4">Interested to work together? Let's talk</h2>
-
-          <form action="" method="get">
+    <!-- FEATURES -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+        <div class="container">
             <div class="row">
-              <div class="col-lg-6 col-12">
-                <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
-              </div>
-
-              <div class="col-lg-6 col-12">
-                <input type="email" class="form-control" name="email" placeholder="Email" id="email">
-              </div>
-
-              <div class="col-12">
-                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
-              </div>
-
-              <div class="ml-lg-auto col-lg-5 col-12">
-                <input type="submit" class="form-control submit-btn" value="Send Message">
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section> -->
-
-
-  <!-- FOOTER -->
-<!-- <footer class="footer py-5">
-  <div class="container" id="contact">
-      <div class="row text-center">
-          <div class="col-12">
-              <h5>Connect with Me</h5>
-              <br>
-              <ul class="list-unstyled d-flex justify-content-center mb-0">
-                  <li class="mx-3">
-                      <a href="https://github.com/VDNT11NULL" target="_blank" class="text-decoration-none">
-                          <img src="images/contacts/github_logo.jpeg" alt="GitHub">
-                      </a>
-                  </li>
-                  <li class="mx-3">
-                      <a href="https://www.linkedin.com/in/vedant-marodkar-0b142b254/" target="_blank" class="text-decoration-none">
-                          <img src="images/contacts/linkedin_logo.png" alt="LinkedIn">
-                      </a>
-                  </li>
-                  <li class="mx-3">
-                      <a href="https://x.com/marodkar_vedant" target="_blank" class="text-decoration-none">
-                          <img src="images/contacts/x_logo.jpeg" alt="X">
-                      </a>
-                  </li> -->
-                  <!-- <li class="mx-3">
-                      <a href="https://www.instagram.com/your-instagram" target="_blank" class="text-decoration-none">
-                          <img src="images/contacts/insta_logo.jpeg" alt="Instagram">
-                      </a>
-                  </li>
-                  <li class="mx-3">
-                      <a href="https://www.kaggle.com/your-kaggle" target="_blank" class="text-decoration-none">
-                          <img src="images/contacts/kaggle_logo_upd.png" alt="Kaggle">
-                      </a>
-                  </li> -->
-                  <!-- <li class="mx-3">
-                      <a href="https://discordapp.com/users/769475957316255785" target="_blank" class="text-decoration-none">
-                          <img src="images/contacts/discord_logo.png" alt="Discord">
-                      </a>
-                  </li>
-                  <li class="mx-3">
-                    <a href="mailto:marodkar@iitbhilai.ac.in" class="text-decoration-none">
-                        <img src="images/contacts/gmail.png" alt="E-mail">
-                    </a>
-                </li>                
-              </ul>
-                <p class="mt-3 mb-0"> Vedant Marodkar &copy; 2024 VDNT11NULL.</p>
-          </div>
-      </div>
-  </div>
-</footer> -->
-
-      <!-- FOOTER -->
-  <footer class="footer py-5">
-    <div class="container" id="contact">
-        <div class="row text-center">
-            <div class="col-12">
-                <h5>Connect with Me</h5>
-                <br>
-                <ul class="list-unstyled d-flex justify-content-center mb-0">
-                    <li class="mx-3">
-                        <a href="https://github.com/VDNT11NULL" target="_blank" class="text-decoration-none">
-                            <img src="images/contacts/github_logo.jpeg" alt="GitHub">
-                        </a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="text-decoration-none">
-                            <img src="images/contacts/linkedin_logo.png" alt="LinkedIn">
-                        </a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="https://x.com/your-twitter" target="_blank" class="text-decoration-none">
-                            <img src="images/contacts/x_logo.jpeg" alt="X">
-                        </a>
-                    </li>
-                    <!-- <li class="mx-3">
-                        <a href="https://www.instagram.com/your-instagram" target="_blank" class="text-decoration-none">
-                            <img src="images/contacts/insta_logo.jpeg" alt="Instagram">
-                        </a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="https://www.kaggle.com/your-kaggle" target="_blank" class="text-decoration-none">
-                            <img src="images/contacts/kaggle_logo_upd.png" alt="Kaggle">
-                        </a>
-                    </li> -->
-                    <li class="mx-3">
-                        <a href="https://discord.gg/your-discord" target="_blank" class="text-decoration-none">
-                            <img src="images/contacts/discord_logo.png" alt="Discord">
-                        </a>
-                    </li>
-                    <li class="mx-3">
-                      <a href="mailto:marodkar@iitbhilai.ac.in" class="text-decoration-none">
-                          <img src="images/contacts/gmail.png" alt="Email">
-                      </a>
-                  </li>                
-                </ul>
-                <p class="mt-3 mb-0"> Vedant Marodkar &copy; 2024 VDNT11NULL.</p>
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4">Experiences</h2>
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Present</span>
+                            </div>
+                            <div class="timeline-info">
+                                <p>Currently seeking internship opportunities in the field of Data Science and Machine Learning to apply my skills and contribute to innovative projects. You can contact <a href="#contact">here</a> if you are interested in hiring me.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Present</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>AI Research Fellow</span><small>CHANAKYA Fellowship Program, TiH-IIT Bombay</small></h3>
+                                <p>Currently working as a research fellow on the Laser Bending Project with funding of <b>Rs. 6 Lakhs</b> by TiH-IITB. I am working in the domain of AIML to automate the laser bending process at industry-level standards by building an ML model for predicting machine parameters, developing a robust algorithm for angle measurements in dynamic environments, and generating G-Code with hardware integration and implementation.</p>
+                                <p><b>Tools & technologies used:</b> OpenCV, PyTorch, Panda gym, Raspberry Pi</p>
+                            </div>
+                        </div>
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Present</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>DSAI Club</span><small>Core Member</small></h3>
+                                <p>I was recently recruited for the post of Core member of DSAI club where I actively participate by developing projects in the field of AI and ML.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2020-21</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Epsilon Robotics Club</span><small>Member</small></h3>
+                                <p>During my tenure as a member at our institute's robotics club, I learned few technical skills like <b>Arduino, IR sensors, etc.</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4 mobile-mt-2">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Present</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>IIT Bhilai</span><small>B.Tech</small></h3>
+                                <p>I am currently a 3rd year undergraduate student pursuing Data Science and Artificial Intelligence (DSAI) at IIT Bhilai, Chhattisgarh, India.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2020-22</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Dr. Ambedkar College</span><small>Higher Secondary School</small></h3>
+                                <p>I completed my Higher Secondary Education (Class 11 and 12) choosing Science stream, achieving a percentage of <b>92.3%.</b></p>
+                            </div>
+                        </div>
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2018-20</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>T.B.R.A.N.'s Mundle English Medium School</span><small>Secondary School</small></h3>
+                                <p>I completed my Secondary Education (Class 10) with a strong performance, achieving a percentage of <b>97.2%.</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  </footer>
-  
+    </section>
 
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="contact-form">
+                        <h2 class="mb-4">Interested to work together? Let's talk</h2>
+                        <form action="https://formspree.io/f/your-form-id" method="POST">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name" required>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <input type="submit" class="form-control submit-btn" value="Send Message">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                        <div class="contact-info-item">
+                            <h3 class="mb-3">Say hello</h3>
+                            <p><a href="mailto:marodkar@iitbhilai.ac.in">marodkar@iitbhilai.ac.in</a></p>
+                            <p><a href="mailto:vedantmarodkar@gmail.com">vedantmarodkar@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
-
-  </body>
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h5>Connect with Me</h5>
+                    <br>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                        <li class="mx-3">
+                            <a href="https://github.com/VDNT11NULL" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/github_logo.jpeg" alt="GitHub">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://www.linkedin.com/in/vedant-marodkar-0b142b254/" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/linkedin_logo.png" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://x.com/marodkar_vedant" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/x_logo.jpeg" alt="X">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="https://discordapp.com/users/769475957316255785" target="_blank" class="text-decoration-none">
+                                <img src="images/contacts/discord_logo.png" alt="Discord">
+                            </a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="mailto:vedantmarodkar@gmail.com" class="text-decoration-none">
+                                <img src="images/contacts/gmail.png" alt="Email">
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="mt-3 mb-0">Vedant Marodkar © 2024 VDNT11NULL.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>

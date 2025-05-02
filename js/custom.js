@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-  
+
     // Theme management functions
     function enableDarkMode() {
         document.documentElement.classList.add('dark-mode');
@@ -16,26 +16,6 @@
         localStorage.setItem('darkMode', 'disabled');
     }
 
-    function applyTheme() {
-        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkMode) {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
-        }
-    }
-
-    $(document).ready(function() {
-        // Check if darkMode is set in localStorage
-        if (localStorage.getItem('darkMode') === null) {
-            // If it doesn't exist, set darkMode to 'enabled' for default dark mode
-            localStorage.setItem('darkMode', 'enabled');
-        }
-  
-        // Apply initial theme
-        applyTheme();
-    });
-  
     // COLOR MODE TOGGLE
     $('.color-mode').click(function() {
         const isDarkMode = $('body').hasClass('dark-mode');
@@ -45,7 +25,7 @@
             enableDarkMode();
         }
     });
-  
+
     // HANDLE SYSTEM PREFERENCE CHANGE
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
         if (event.matches) {
@@ -54,10 +34,10 @@
             disableDarkMode();
         }
     });
-  
+
     // HEADER ANIMATION
     $(".navbar").headroom();
-  
+
     // PROJECT CAROUSEL
     $('.owl-carousel').owlCarousel({
         items: 1,
@@ -65,7 +45,7 @@
         margin: 10,
         nav: true
     });
-  
+
     // SMOOTH SCROLL
     $(function() {
         $('.nav-link, .custom-btn-link').on('click', function(event) {
@@ -76,9 +56,8 @@
             event.preventDefault();
         });
     });
-  
+
     // TOOLTIP
     $('.social-links a').tooltip();
-  
+
 })(jQuery);
-  
