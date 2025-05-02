@@ -12,27 +12,37 @@ https://www.tooplate.com/view/2115-marvel
 :root {
     /* Light theme variables */
     --light-text-color: #5b5b5b;
-    --light-bg-color: #e3d9d9;
+    --light-bg-color: #f6f1f1;
     --light-graybox-bg: #f0f0f0;
-    --light-graybox-border: #d0d0d0;
-    --light-card-bg: #ffffff;
-    --light-nav-bg: #ffffff;
-    --light-footer-bg: #ffffff;
+    --light-graybox-border: #ffffff;
+    --light-card-bg: #ede3e3;
+    --light-nav-bg: #f6f1f1;
+    --light-footer-bg: #eed9d9;
     --light-link-color: #000000;
     --light-link-hover-color: #64cf0c;
     --light-animated-text-color: #810404;
+    --light-filter-btn-bg: #007bff;
+    --light-filter-btn-hover-bg: #0056b3;
+    --light-project-card-bg: #d9d9d9;
+    --light-modal-bg: #e0e0e0;
+    --light-modal-border: #deddce;
     
     /* Dark theme variables */
     --dark-text-color: #ffffff;
     --dark-bg-color: #0D1117;
-    --dark-graybox-bg: #1f1f1f;
+    --dark-graybox-bg: #7f9b4c;
     --dark-graybox-border: #2f2f2f;
-    --dark-card-bg: #1E1E1E;
+    --dark-card-bg: #cedcb1;
     --dark-nav-bg: #0D1117;
     --dark-footer-bg: #0D1117;
     --dark-link-color: #ffffff;
     --dark-link-hover-color: #64cf0c;
     --dark-animated-text-color: #50b00b;
+    --dark-filter-btn-bg: #007bff;
+    --dark-filter-btn-hover-bg: #0056b3;
+    --dark-project-card-bg: #2a2a2a;
+    --dark-modal-bg: #2a2a2a;
+    --dark-modal-border: #deddce;
 }
 
 /* Global styles with dark mode as default */
@@ -59,6 +69,11 @@ body {
     --link-color: var(--dark-link-color);
     --animated-text-color: var(--dark-animated-text-color);
     --link-hover-color: var(--dark-link-hover-color);
+    --filter-btn-bg: var(--dark-filter-btn-bg);
+    --filter-btn-hover-bg: var(--dark-filter-btn-hover-bg);
+    --project-card-bg: var(--dark-project-card-bg);
+    --modal-bg: var(--dark-modal-bg);
+    --modal-border: var(--dark-modal-border);
 }
 
 /* Light mode variables */
@@ -73,6 +88,11 @@ body.light-mode {
     --animated-text-color: var(--light-animated-text-color);
     --link-color: var(--light-link-color);
     --link-hover-color: var(--light-link-hover-color);
+    --filter-btn-bg: var(--light-filter-btn-bg);
+    --filter-btn-hover-bg: var(--light-filter-btn-hover-bg);
+    --project-card-bg: var(--light-project-card-bg);
+    --modal-bg: var(--light-modal-bg);
+    --modal-border: var(--light-modal-border);
 }
 
 .full-screen {
@@ -505,6 +525,159 @@ body.light-mode .footer ul li img {
     background: var(--text-color);
 }
 
+.project-section {
+    padding: 50px 0;
+}
+
+.filter-buttons {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.filter-buttons button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--filter-btn-bg);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+    background-color: var(--filter-btn-hover-bg);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.project-card {
+    background: var(--project-card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel {
+    width: 100%;
+    height: 200px;
+}
+
+.carousel-inner,
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.project-info h5 {
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: var(--filter-btn-bg);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--filter-btn-hover-bg);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    color: #ffffff;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: var(--modal-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--modal-border);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.modal-body .carousel {
+    height: 400px;
+}
+
+.modal-body .carousel-item img {
+    height: 400px;
+    object-fit: contain;
+}
+
+.modal-body audio {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--modal-border);
+}
+
 .google-map iframe {
     width: 100%;
     height: 18.75rem;
@@ -612,129 +785,7 @@ body.light-mode .footer ul li img {
     .timeline-info {
         margin-left: 4rem;
     }
-}
 
-@media (max-width: 768px) {
-    body {
-        padding-top: 2rem;
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .animated-item {
-        font-size: 1.75rem;
-    }
-
-    .navbar-collapse {
-        background: var(--nav-bg);
-        text-align: center;
-        padding-bottom: 0.5rem;
-    }
-
-    .navbar-expand-sm .navbar-nav .nav-link {
-        padding: 0.5rem 1rem;
-        font-size: 0.9375rem;
-    }
-
-    .timeline-yr {
-        width: 3.75rem;
-        height: 3.75rem;
-        line-height: 3.75rem;
-    }
-
-    .timeline-yr span {
-        font-size: 0.875rem;
-        line-height: 3.75rem;
-    }
-
-    .timeline-wrapper:before {
-        left: 1.875rem;
-    }
-
-    .timeline-info {
-        margin-left: 3.5rem;
-    }
-
-    .about-text {
-        padding-right: 0;
-    }
-
-    .about-image {
-        max-width: 100%;
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .animated-info {
-        min-width: auto;
-    }
-
-    .animated-item {
-        font-size: 1.25rem;
-    }
-
-    .custom-btn-group {
-        text-align: center;
-    }
-
-    .custom-btn {
-        display: block;
-        margin: 0.625rem 0;
-    }
-
-    .navbar-expand-sm .navbar-nav .nav-link {
-        font-size: 0.875rem;
-    }
-
-    .owl-theme .owl-nav {
-        display: none;
-    }
-
-    .timeline-info small {
-        display: block;
-        margin: 0.625rem 0 0 0;
-    }
-}
-
-@media (max-width: 320px) {
-    .animated-text {
-        margin-top: 0;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-
-    .full-screen {
-        padding: 2rem 0;
-    }
-
-    .mobile-block {
-        display: block;
-    }
-
-    .contact-info {
-        flex-direction: column;
-    }
-
-    .social-links li {
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    .navbar-brand {
-        font-size: 1.25rem;
-    }
-
-    .footer ul li img {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-}
