@@ -17,6 +17,7 @@ https://www.tooplate.com/view/2115-marvel
     --light-graybox-border: #ffffff;
     --light-card-bg: #ede3e3;
     --light-nav-bg: #f6f1f1;
+    --light-nav-brand-color: #000000;
     --light-footer-bg: #eed9d9;
     --light-link-color: #000000;
     --light-link-hover-color: #64cf0c;
@@ -30,12 +31,14 @@ https://www.tooplate.com/view/2115-marvel
     /* Dark theme variables */
     --dark-text-color: #ffffff;
     --dark-bg-color: #0D1117;
+    /* --dark-bg-color: #4d678e; */
     --dark-graybox-bg: #7f9b4c;
     --dark-graybox-border: #2f2f2f;
     --dark-card-bg: #cedcb1;
     --dark-nav-bg: #0D1117;
+    --dark-nav-brand-color: #88e399;
     --dark-footer-bg: #0D1117;
-    --dark-link-color: #ffffff;
+    --dark-link-color: #00907d;
     --dark-link-hover-color: #64cf0c;
     --dark-animated-text-color: #50b00b;
     --dark-filter-btn-bg: #007bff;
@@ -65,6 +68,7 @@ body {
     --graybox-border: var(--dark-graybox-border);
     --card-bg: var(--dark-card-bg);
     --nav-bg: var(--dark-nav-bg);
+    --nav-brand-color: var(--dark-nav-brand-color);
     --footer-bg: var(--dark-footer-bg);
     --link-color: var(--dark-link-color);
     --animated-text-color: var(--dark-animated-text-color);
@@ -84,6 +88,7 @@ body.light-mode {
     --graybox-border: var(--light-graybox-border);
     --card-bg: var(--light-card-bg);
     --nav-bg: var(--light-nav-bg);
+    --nav-brand-color: var(--light-nav-brand-color);
     --footer-bg: var(--light-footer-bg);
     --animated-text-color: var(--light-animated-text-color);
     --link-color: var(--light-link-color);
@@ -278,6 +283,7 @@ h3 {
 
 .navbar-brand {
     font-weight: bold;
+    color: var(--nav-brand-color);
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
