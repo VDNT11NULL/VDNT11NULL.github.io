@@ -43,7 +43,15 @@
   
     // HEADER ANIMATION
     $(".navbar").headroom();
-  
+
+    // ✅ Add this block: Set carousel attributes globally
+    $('.carousel').each(function () {
+        $(this).attr({
+            'data-ride': 'carousel',
+            'data-interval': '4000'
+        });
+    });
+
     // PROJECT CAROUSEL
     $('.owl-carousel').owlCarousel({
         items: 1,

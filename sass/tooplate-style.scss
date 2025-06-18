@@ -278,6 +278,13 @@ b, strong {
     }
 }
 
+.nav-custom-shift {
+	position: relative;
+	transform: translateX(-30px); // 🔧 tweak this value to shift left or right
+	transition: transform 0.3s ease;
+  }
+  
+
 .navbar-brand {
 	font-weight: $font-weight-bold;
 }
@@ -289,6 +296,7 @@ b, strong {
 		}
 	}
 }
+
 
 .nav-link {
 	font-weight: $font-weight-bold;
@@ -718,10 +726,15 @@ body.dark-mode .tech-icons img {
 	}
 
 	.navbar-collapse {
-		background: $text-white;
-		text-align: center;
-		padding-bottom: 20px;
+
+		display: flex !important;
+		justify-content: center;
+
+		// background: $text-white;
+		// text-align: center;
+		// padding-bottom: 20px;
 	}
+	  
 
 	.navbar-expand-sm .navbar-nav .nav-link {
 		padding: 3px 20px;
